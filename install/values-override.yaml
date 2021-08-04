@@ -22,14 +22,14 @@ server:
 
   additionalProjects:
     - name: argocd-base
-      namespace: *
+      namespace: argocd
       additionalLabels: {}
       additionalAnnotations: {}
-      description: Argocd Project
+      description: Argocd base project
       sourceRepos:
         - '*'
       destinations:
-        - namespace: *
+        - namespace: '*'
           server: https://kubernetes.default.svc
       clusterResourceWhitelist:
         - group: '*'
