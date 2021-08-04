@@ -69,7 +69,7 @@ server:
           recurse: true
           jsonnet: {}
       destination:
-        namespace: *
+        namespace: '*'
         server: https://kubernetes.default.svc
       syncPolicy:
         automated:
@@ -87,7 +87,7 @@ server:
           recurse: true
           jsonnet: {}
       destination:
-        namespace: *
+        namespace: '*'
         server: https://kubernetes.default.svc
       syncPolicy:
         automated:
