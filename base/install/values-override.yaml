@@ -30,7 +30,7 @@ server:
       sourceRepos:
         - '*'
       destinations:
-        - namespace: '*'
+        - namespace: *
           server: https://kubernetes.default.svc
       clusterResourceWhitelist:
         - group: '*'
@@ -47,7 +47,7 @@ server:
       sourceRepos:
         - '*'
       destinations:
-        - namespace: '*'
+        - namespace: *
           server: https://kubernetes.default.svc
       clusterResourceWhitelist:
         - group: '*'
@@ -88,7 +88,7 @@ server:
           recurse: true
           jsonnet: {}
       destination:
-        namespace: '*'
+        namespace: *
         server: https://kubernetes.default.svc
       syncPolicy:
         automated:

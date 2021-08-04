@@ -15,7 +15,7 @@ spec:
       jsonnet: {}
 
   destination:
-    namespace: '*'
+    namespace: *
     server: https://kubernetes.default.svc
 
   syncPolicy:
