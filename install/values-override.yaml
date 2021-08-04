@@ -62,7 +62,7 @@ server:
       namespace: argocd
       project: argocd-base
       source:
-        path: projects
+        path: projects/dev
         repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
         targetRevision: HEAD
         directory:
