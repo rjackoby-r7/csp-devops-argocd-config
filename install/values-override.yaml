@@ -1,0 +1,95 @@
+## ArgoCD configuration
+## Ref: https://github.com/argoproj/argo-cd
+##
+## Server
+server:
+  ## ArgoCD config
+  ## reference https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/argocd-cm.yaml
+  service:
+    type: LoadBalancer
+
+  configEnabled: true
+  config:
+    repositories: |
+      - type: git
+        url: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
+      - type: git
+        url: https://github.com/rjackoby-r7/csp-devops-argocd-deploy.git
+      - name: helm-alcide
+        type: helm
+        url: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/alcide
+
+
+  additionalProjects:
+    - name: argocd-base
+      namespace: argocd
+      additionalLabels: {}
+      additionalAnnotations: {}
+      description: Argocd Project
+      sourceRepos:
+        - '*'
+      destinations:
+        - namespace: argocd
+          server: https://kubernetes.default.svc
+      clusterResourceWhitelist:
+        - group: '*'
+          kind: '*'
+      orphanedResources:
+        warn: false
+
+
+  additionalApplications:
+    - name: argocd-install
+      namespace: argocd
+      project: argocd-base
+      source:
+        helm:
+          version: v3
+          valueFiles:
+            - values.yaml
+            - ../values-override.yaml
+        path: install/argo-cd
+        repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
+        targetRevision: HEAD
+      destination:
+        namespace: argocd
+        server: https://kubernetes.default.svc
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
+
+    - name: argocd-projects
+      namespace: argocd
+      project: argocd-base
+      source:
+        path: projects
+        repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
+        targetRevision: HEAD
+        directory:
+          recurse: true
+          jsonnet: {}
+      destination:
+        namespace: argocd
+        server: https://kubernetes.default.svc
+      syncPolicy:
+        automated:
+          selfHeal: true
+          prune: true
+
+    - name: argocd-apps
+      namespace: argocd
+      project: argocd-base
+      source:
+        path: /
+        repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-deploy.git
+        targetRevision: HEAD
+        directory:
+          recurse: true
+          jsonnet: {}
+      destination:
+        namespace: argocd
+        server: https://kubernetes.default.svc
+      syncPolicy:
+        automated:
+          selfHeal: true
+          prune: true
