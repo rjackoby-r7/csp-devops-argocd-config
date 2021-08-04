@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: crossplane-dev-xrds
+  name: crossplane_dev_xrds
   namespace: argocd-dev-projects
 spec:
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'
   destinations:
-  - namespace: *
+  - namespace: '*'
     server: https://kubernetes.default.svc
   orphanedResources:
     warn: false
