@@ -7,7 +7,7 @@ spec:
   project: argocd-base-apps-and-projects
 
   source:
-    path: dev
+    path: . #dev
     repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-deploy.git
     targetRevision: HEAD
     directory:
