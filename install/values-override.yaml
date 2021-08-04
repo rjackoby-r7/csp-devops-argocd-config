@@ -22,7 +22,7 @@ server:
 
   additionalProjects:
     - name: argocd-base
-      namespace: argocd
+      namespace: *
       additionalLabels: {}
       additionalAnnotations: {}
       description: Argocd Project
@@ -80,7 +80,7 @@ server:
       namespace: argocd
       project: argocd-base
       source:
-        path: .
+        path: apps
         repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-deploy.git
         targetRevision: HEAD
         directory:
