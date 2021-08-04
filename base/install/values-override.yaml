@@ -66,7 +66,7 @@ server:
           valueFiles:
             - values.yaml
             - ../values-override.yaml
-        path: /base/install/argo-cd
+        path: base/install/argo-cd
         repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
         targetRevision: HEAD
       destination:
