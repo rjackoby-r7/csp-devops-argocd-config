@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: crossplane_dev_xrds
+  name: crossplane-dev-xrds
   namespace: argocd-dev-projects
 spec:
   clusterResourceWhitelist:
