@@ -21,11 +21,12 @@ server:
 
 
   additionalProjects:
-    - name: argocd-base
+    # Project for ArgoCD resources
+    - name: argocd-resources
       namespace: argocd
       additionalLabels: {}
       additionalAnnotations: {}
-      description: Argocd base project
+      description: Argocd resources project
       sourceRepos:
         - '*'
       destinations:
@@ -37,18 +38,35 @@ server:
       orphanedResources:
         warn: false
 
+    # Project for ArgoCD parent apps and projects
+    - name: argocd-base-apps-and-projects
+      namespace: argocd
+      additionalLabels: {}
+      additionalAnnotations: {}
+      description: Argocd base project for defining parent apps for projects and apps
+      sourceRepos:
+        - '*'
+      destinations:
+        - namespace: '*'
+          server: https://kubernetes.default.svc
+      clusterResourceWhitelist:
+        - group: '*'
+          kind: '*'
+      orphanedResources:
+        warn: false
 
   additionalApplications:
+    # Base for resources
     - name: argocd-install
       namespace: argocd
-      project: argocd-base
+      project: argocd-resources
       source:
         helm:
           version: v3
           valueFiles:
             - values.yaml
             - ../values-override.yaml
-        path: install/argo-cd
+        path: /base/install/argo-cd
         repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
         targetRevision: HEAD
       destination:
@@ -58,30 +76,13 @@ server:
         syncOptions:
         - CreateNamespace=true
 
-    - name: argocd-dev-projects
+    # Base for apps and projects
+    - name: argocd-root-for-apps-and-projects
       namespace: argocd
-      project: argocd-base
+      project: argocd-base-apps-and-projects
       source:
-        path: projects/dev
+        path: base/root-argocd-applications
         repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
-        targetRevision: HEAD
-        directory:
-          recurse: true
-          jsonnet: {}
-      destination:
-        namespace: '*'
-        server: https://kubernetes.default.svc
-      syncPolicy:
-        automated:
-          selfHeal: true
-          prune: true
-
-    - name: argocd-apps
-      namespace: argocd
-      project: argocd-base
-      source:
-        path: dev
-        repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-deploy.git
         targetRevision: HEAD
         directory:
           recurse: true
