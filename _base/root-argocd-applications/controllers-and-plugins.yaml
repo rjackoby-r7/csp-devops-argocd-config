@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    path: projects/dev
+    path: additional_controllers_or_plugins
     repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
     targetRevision: HEAD
     directory:
