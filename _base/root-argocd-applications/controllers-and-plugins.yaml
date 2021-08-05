@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd-apps-root-dev
+  name: argocd-controllers-and-plugins
   namespace: argocd
 spec:
-  project: argocd-base-apps-and-projects
+  project: default
 
   source:
-    path: . #dev
-    repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-deploy.git
+    path: projects/dev
+    repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
     targetRevision: HEAD
     directory:
       recurse: true

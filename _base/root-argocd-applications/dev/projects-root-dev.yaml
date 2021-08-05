@@ -4,7 +4,7 @@ metadata:
   name: argocd-projects-root-dev
   namespace: argocd
 spec:
-  project: argocd-base-apps-and-projects
+  project: default
 
   source:
     path: projects/dev
