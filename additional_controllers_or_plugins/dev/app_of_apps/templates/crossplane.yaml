@@ -8,9 +8,9 @@ metadata:
 spec:
   project: {{ .Values.project }}
   source:
-    repoURL:        {{ .Values.crossplane.source.repoURL }}
-    chart:          {{ .Values.crossplane.source.chart }}
+    repoURL: {{ .Values.crossplane.source.repoURL }}
+    chart: {{ .Values.crossplane.source.chart }}
     targetRevision: {{ .Values.crossplane.source.targetRevision }}
   destination:
     namespace: {{ .Values.crossplane.destination.namespace }}
-    server:    {{ .Values.crossplane.destination.server }}
+    server: {{ .Values.crossplane.destination.server }}
