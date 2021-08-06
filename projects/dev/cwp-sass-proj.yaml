@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: cwp-sass-dev-proj.yaml
-  namespace: argocd-dev-projects
+  namespace: argocd
 spec:
   clusterResourceWhitelist:
   - group: '*'
