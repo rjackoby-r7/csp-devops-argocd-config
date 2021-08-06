@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: crossplane-installation
+  namespace: {{ .Values.namespace }}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: {{ .Values.project }}
+  source:
+    repoURL: {{ .Values.crossplane.source.repoURL }}
+    chart: {{ .Values.crossplane.source.chart }}
+    targetRevision: {{ .Values.crossplane.source.targetRevision }}
+  destination:
+    namespace: {{ .Values.crossplane.destination.namespace }}
+    server: {{ .Values.crossplane.destination.server }}
