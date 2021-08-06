@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: cwp-agents-dev-proj.yaml
+  name: controllers-or-plugins-dev-proj
   namespace: argocd #Must be in 'argocd' ns in order to be appeared in UI
 spec:
   clusterResourceWhitelist:
-  - group: '*'
-    kind: '*'
+    - group: '*'
+      kind: '*'
   destinations:
-  - namespace: '*'
-    server: https://kubernetes.default.svc
+    - namespace: '*'
+      server: https://kubernetes.default.svc
   orphanedResources:
     warn: false
   sourceRepos:
-  - '*'
+    - '*'
