@@ -6,7 +6,7 @@ metadata:
   #finalizers:
   #  - resources-finalizer.argocd.argoproj.io
 spec:
-  project: controllers-or-plugins-dev-proj
+  project: default #controllers-or-plugins-dev-proj
   source:
     repoURL: https://charts.crossplane.io/stable
     chart: crossplane
