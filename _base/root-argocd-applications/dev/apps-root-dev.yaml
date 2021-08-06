@@ -3,6 +3,9 @@ kind: Application
 metadata:
   name: argocd-apps-root-dev
   namespace: argocd
+  labels:
+    tier: app
+
 spec:
   project: default
 

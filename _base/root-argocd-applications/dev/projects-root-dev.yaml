@@ -3,9 +3,10 @@ kind: Application
 metadata:
   name: argocd-projects-root-dev
   namespace: argocd
+  labels:
+    tier: config
 spec:
   project: default
-
   source:
     path: projects/dev
     repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
