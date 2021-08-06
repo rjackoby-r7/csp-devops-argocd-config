@@ -10,9 +10,9 @@ spec:
     path: additional_controllers_or_plugins/dev/app_of_apps
     repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
     targetRevision: HEAD
-    directory:
-      recurse: true
-      jsonnet: {}
+    #directory:
+    #  recurse: true
+    #  jsonnet: {}
 
   destination:
     namespace: '*'
