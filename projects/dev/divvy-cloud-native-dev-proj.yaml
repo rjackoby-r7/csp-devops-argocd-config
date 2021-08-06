@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: divvy-cloud-native-dev-proj.yaml
-  namespace: argocd-dev-projects
+  namespace: argocd #Must be in 'argocd' ns in order to be appeared in UI
 spec:
   clusterResourceWhitelist:
   - group: '*'
