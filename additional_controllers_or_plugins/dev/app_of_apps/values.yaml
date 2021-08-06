@@ -1,4 +1,4 @@
-namespace: argocd-controllers-and-plugins-apps-dev-ns
+namespace: argocd #argocd-controllers-and-plugins-apps-dev-ns
 project: controllers-or-plugins-dev-proj
 
 crossplane:
