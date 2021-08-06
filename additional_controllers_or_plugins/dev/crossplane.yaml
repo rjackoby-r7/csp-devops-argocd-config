@@ -9,8 +9,8 @@ spec:
   project: controllers-or-plugins-dev-proj
   source:
     repoURL: https://charts.crossplane.io/stable
-    chart: crossplane-stable/crossplane
-    targetRevision: 1.2.0
+    chart: crossplane
+    targetRevision: 1.3.0
   destination:
     namespace: crossplane-system
     server: https://kubernetes.default.svc
