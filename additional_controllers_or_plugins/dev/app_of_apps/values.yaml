@@ -1,4 +1,4 @@
-namespace: argocd #argocd-controllers-and-plugins-apps-dev-ns
+namespace: argocd #argocd-controllers-and-plugins-apps-dev-ns TODO: Understand why changing this to other ns rather then argocd will cause it to lose track on resources and not showing them
 project: controllers-or-plugins-dev-proj
 
 crossplane:
