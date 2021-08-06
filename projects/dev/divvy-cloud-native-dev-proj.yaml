@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: crossplane-dev-xrds
+  name: divvy-cloud-native-dev-proj.yaml
   namespace: argocd-dev-projects
 spec:
   clusterResourceWhitelist:
