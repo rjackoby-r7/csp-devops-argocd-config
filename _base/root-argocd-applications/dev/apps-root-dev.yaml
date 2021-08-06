@@ -4,6 +4,7 @@ metadata:
   name: argocd-apps-root-dev
   namespace: argocd
   labels:
+    level: tier-root
     tier: app
 
 spec:

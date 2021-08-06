@@ -4,6 +4,7 @@ metadata:
   name: argocd-controllers-and-plugins
   namespace: argocd
   labels:
+    level: tier-root
     tier: config
 spec:
   project: default

@@ -4,6 +4,7 @@ metadata:
   name: argocd-projects-root-dev
   namespace: argocd
   labels:
+    level: tier-root
     tier: config
 spec:
   project: default

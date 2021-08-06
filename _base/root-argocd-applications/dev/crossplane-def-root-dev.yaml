@@ -4,6 +4,7 @@ metadata:
   name: argocd-crossplane-def-root-dev
   namespace: argocd
   labels:
+    level: tier-root
     tier: infra
 spec:
   project: default
