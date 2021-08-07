@@ -11,7 +11,7 @@ spec:
   project: default
 
   source:
-    path: infra-deployments
+    path: infra-deploy
     repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-deploy.git
     targetRevision: HEAD
     directory:
