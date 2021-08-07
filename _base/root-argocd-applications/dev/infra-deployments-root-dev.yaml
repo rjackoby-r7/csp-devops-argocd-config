@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd-infra-deployments-root-dev
+  name: argocd-infra-deploy-root-dev
   namespace: argocd
   labels:
     level: tier-root
