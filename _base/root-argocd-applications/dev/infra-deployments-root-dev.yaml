@@ -22,7 +22,7 @@ spec:
     namespace: infra-deployments-claims-ns
     server: https://kubernetes.default.svc
 
-  syncPolicy:
-    automated:
-      selfHeal: true
-      prune: true
+  #syncPolicy:
+  #  automated:
+  #    selfHeal: true
+  #    prune: true
