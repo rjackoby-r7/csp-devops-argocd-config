@@ -10,7 +10,7 @@ spec:
   project: default
 
   source:
-    path: /delete/ #dev
+    path: delete/ #dev
     repoURL: https://github.com/rjackoby-r7/csp-devops-crossplane-def.git
     targetRevision: HEAD
     directory:
