@@ -10,12 +10,12 @@ spec:
   project: default
 
   source:
-    path: . #dev
+    path: /delete/ #dev
     repoURL: https://github.com/rjackoby-r7/csp-devops-crossplane-def.git
     targetRevision: HEAD
     directory:
       recurse: true
-      jsonnet: {}
+      #jsonnet: {}
 
   destination:
     namespace: '*'
@@ -25,3 +25,4 @@ spec:
     automated:
       selfHeal: true
       prune: true
+      allowEmpty: true
