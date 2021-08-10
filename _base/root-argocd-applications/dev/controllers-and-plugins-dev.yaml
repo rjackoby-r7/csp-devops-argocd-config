@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   source:
-    path: additional_controllers_or_plugins/dev/app_of_apps
+    path: additional_controllers_or_plugins/dev/
     repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
     targetRevision: HEAD
     #directory:
@@ -24,3 +24,4 @@ spec:
     automated:
       selfHeal: true
       prune: true
+      allowEmpty: true
