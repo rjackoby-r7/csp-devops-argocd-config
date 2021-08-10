@@ -11,18 +11,19 @@ spec:
   project: default
 
   source:
-    path: infra-deploy
+    path: infra-deploy/delete
     repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-deploy.git
     targetRevision: HEAD
     directory:
       recurse: true
-      jsonnet: {}
+      #jsonnet: {}
 
   destination:
     namespace: infra-deployments-claims-ns
     server: https://kubernetes.default.svc
 
-  #syncPolicy:
-  #  automated:
+  syncPolicy:
+    automated:
+      allowEmpty: true
   #    selfHeal: true
   #    prune: true
