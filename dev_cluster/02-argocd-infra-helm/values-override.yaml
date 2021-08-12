@@ -31,7 +31,7 @@ server:
       namespace: argocd
       project: default
       source:
-        path: _root-apps
+        path: dev_cluster/_root-apps
         repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
         targetRevision: HEAD
         directory:
