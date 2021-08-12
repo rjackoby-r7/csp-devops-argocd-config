@@ -1,1 +1,1 @@
-App of apps charts for Cluster bootstrap components.
+ArgoCD application ref to argoCD helm chart which is stored in this git directory.

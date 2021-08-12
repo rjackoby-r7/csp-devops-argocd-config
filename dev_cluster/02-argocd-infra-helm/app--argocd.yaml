@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  source:
+    #repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/
+    #chart: argo-cd
+    #targetRevision: 3.11.5
+
+    repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
+    path: dev_cluster/02-argocd-infra-helm/argocd-helm-chart
+    targetRevision: HEAD
+    helm:
+      version: v3
+      valueFiles:
+        - values.yaml
+        - ../values-override.yaml
+
+  project: default
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc

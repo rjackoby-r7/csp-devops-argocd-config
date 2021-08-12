@@ -1,14 +1,13 @@
-## ArgoCD configuration
-## Ref: https://github.com/argoproj/argo-cd
-##
-## Server
+dex:
+  enabled: false
+
 server:
-  ## ArgoCD config
-  ## reference https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/argocd-cm.yaml
+  ## ArgoCD config - reference https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/argocd-cm.yaml
   service:
     type: LoadBalancer
 
   configEnabled: true
+
   config:
     repositories: |
       - type: git
@@ -18,27 +17,29 @@ server:
       - name: helm-alcide
         type: helm
         url: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/alcide
+      - name: cluster-level-charts
+        type: helm
+        url: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/
 
 
-  # additionalProjects:
+    # additionalProjects:
     # No need - will root app will use default project
 
   additionalApplications:
     # Root app for apps and projects
-    - name: argocd-root-app
+    - name: root
       namespace: argocd
       project: default
       source:
-        path: _base/root-argocd-applications/
+        path: _root-apps
         repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
         targetRevision: HEAD
         directory:
           recurse: true
-          jsonnet: {}
       destination:
         namespace: '*'
         server: https://kubernetes.default.svc
       syncPolicy:
         automated:
-          selfHeal: true
+          #selfHeal: true
           prune: true
