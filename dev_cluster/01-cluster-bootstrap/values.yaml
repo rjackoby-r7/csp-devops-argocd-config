@@ -12,5 +12,5 @@ ingress_controller:
     targetRevision: 3.29.0
 
   destination:
-    namespace: argocd
+    namespace: ops
     server:    https://kubernetes.default.svc
