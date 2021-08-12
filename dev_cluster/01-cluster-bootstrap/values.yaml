@@ -10,6 +10,12 @@ ingress_controller:
     repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/
     chart: ingress-nginx
     targetRevision: 3.29.0
+    helm:
+      parameters:
+        - name: "controller.scope.enabled"
+          value: "false"
+        #- name: "controller.scope.namespace"
+        #  value: "alcide"
 
   destination:
     namespace: ops
