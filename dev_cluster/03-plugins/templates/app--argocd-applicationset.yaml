@@ -3,6 +3,7 @@ kind: Application
 metadata:
   name: argocd-applicationset
   namespace: {{ .Values.namespace }}
+  labels: {{ .Values.labels }}
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:

@@ -3,6 +3,10 @@ kind: Application
 metadata:
   name: argocd
   namespace: argocd
+  labels:
+    level: component
+    tier: argocd
+
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:

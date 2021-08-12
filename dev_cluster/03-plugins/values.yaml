@@ -1,5 +1,8 @@
 namespace: argocd
 project:   default
+labels:
+  level: component
+  tier: plugins
 
 applicationset:
   source:

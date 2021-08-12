@@ -1,6 +1,10 @@
 namespace: argocd
 project:   default
 
+labels:
+  level: component
+  tier: cluster
+
 ingress_controller:
   source:
     repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/
