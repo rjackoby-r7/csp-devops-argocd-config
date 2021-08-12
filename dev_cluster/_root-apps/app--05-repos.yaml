@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: repos-dev
+  name: 05-repos-dev
   namespace: argocd
   labels:
     level: tier-root

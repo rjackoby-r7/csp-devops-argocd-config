@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: plugins-dev
+  name: 03-plugins-dev
   namespace: argocd
   labels:
     level: tier-root
