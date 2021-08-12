@@ -29,6 +29,8 @@ server:
     # Root app for apps and projects
     - name: root
       namespace: argocd
+      labels:
+        root: true
       project: default
       source:
         path: dev_cluster/_root-apps
