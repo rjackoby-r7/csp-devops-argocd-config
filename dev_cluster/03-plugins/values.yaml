@@ -1,0 +1,12 @@
+namespace: argocd
+project:   default
+
+applicationset:
+  source:
+    repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/
+    chart: argocd-applicationset
+    targetRevision: 1.0.0
+
+  destination:
+    namespace: argocd
+    server:    https://kubernetes.default.svc

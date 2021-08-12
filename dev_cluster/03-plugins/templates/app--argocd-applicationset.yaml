@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-applicationset
+  namespace: {{ .Values.namespace }}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  source:
+    repoURL: {{ .Values.applicationset.repoURL }}
+    chart:   {{ .Values.applicationset.chart }}
+    targetRevision: {{ .Values.applicationset.targetRevision }}
+  project: {{ .Values.project }}
+  destination:
+    namespace: {{ .Values.applicationset.destination.namespace }}
+    server: {{ .Values.applicationset.destination.server }}

@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ingress-controller
+  namespace: {{ .Values.namespace }}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  source:
+    repoURL:        {{ .Values.ingress_controller.source.repoURL }}
+    chart:          {{ .Values.ingress_controller.source.chart }}
+    targetRevision: {{ .Values.ingress_controller.source.targetRevision }}
+  project: {{ .Values.project }}
+  destination:
+    namespace: {{ .Values.ingress_controller.destination.namespace }}
+    server:    {{ .Values.ingress_controller.destination.server }}
