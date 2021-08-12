@@ -3,7 +3,9 @@ kind: Application
 metadata:
   name: ingress-controller
   namespace: {{ .Values.namespace }}
-  labels: {{ .Values.labels }}
+  labels:
+    level: {{ .Values.labels.level }}
+    tier: {{ .Values.labels.tier }}
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:

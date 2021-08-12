@@ -1,5 +1,0 @@
-# Should be installed on all ArgoCD servers - so this is why it is duplicated per env
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: crossplane-system

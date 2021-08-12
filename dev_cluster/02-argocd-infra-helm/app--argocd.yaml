@@ -4,8 +4,8 @@ metadata:
   name: argocd
   namespace: argocd
   labels:
-    level: component
-    tier: argocd
+    level: {{ .Values.labels.level }}
+    tier: {{ .Values.labels.tier }}
 
   finalizers:
     - resources-finalizer.argocd.argoproj.io
