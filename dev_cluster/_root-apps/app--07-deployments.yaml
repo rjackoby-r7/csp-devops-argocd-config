@@ -12,6 +12,8 @@ spec:
     path: infra-deploy/dev
     repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-deploy.git
     targetRevision: HEAD
+    directory:
+      recurse: true
 
   destination:
     namespace: '*'
