@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   source:
-    path: dev_cluster/02-argocd-infra-helm
+    path: dev_cluster/01-argocd-infra-helm
     repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
     targetRevision: HEAD
 
