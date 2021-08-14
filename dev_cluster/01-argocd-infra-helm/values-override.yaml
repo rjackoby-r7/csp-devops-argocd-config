@@ -17,9 +17,14 @@ server:
       - name: helm-alcide
         type: helm
         url: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/alcide
+      - name: helm-alcide-ops
+        type: helm
+        url: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/ops
       - name: cluster-level-charts
         type: helm
         url: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/
+
+
 
 
     # additionalProjects:
