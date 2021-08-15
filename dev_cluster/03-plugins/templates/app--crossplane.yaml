@@ -10,9 +10,9 @@ spec:
     repoURL: {{ .Values.crossplane.source.repoURL }}
     chart:   {{ .Values.crossplane.source.chart }}
     targetRevision: {{ .Values.crossplane.source.targetRevision }}
-    syncPolicy:
-      syncOptions:
-        - CreateNamespace=true
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
   project: {{ .Values.project }}
   destination:
     namespace: {{ .Values.crossplane.destination.namespace }}
