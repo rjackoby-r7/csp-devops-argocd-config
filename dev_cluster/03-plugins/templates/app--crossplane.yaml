@@ -7,9 +7,9 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   source:
-    repoURL: {{ .Values.crossplane.repoURL }}
-    chart:   {{ .Values.crossplane.chart }}
-    targetRevision: {{ .Values.crossplane.targetRevision }}
+    repoURL: {{ .Values.crossplane.source.repoURL }}
+    chart:   {{ .Values.crossplane.source.chart }}
+    targetRevision: {{ .Values.crossplane.source.targetRevision }}
   project: {{ .Values.project }}
   destination:
     namespace: {{ .Values.crossplane.destination.namespace }}
