@@ -32,6 +32,7 @@ server:
     - name: root
       namespace: argocd
       labels:
+        domain: config
         root: true
       project: default
       source:
