@@ -4,7 +4,8 @@ metadata:
   name: argocd
   namespace: argocd
   labels:
-    level: component
+    domain: config
+    level: creation
     tier: argocd
 
   finalizers:

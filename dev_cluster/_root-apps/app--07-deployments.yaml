@@ -4,13 +4,14 @@ metadata:
   name: 07-deployments-dev
   namespace: argocd
   labels:
+    domain: config
     level: tier-root
     tier: deployments
 spec:
   project: default
   source:
-    path: infra-deploy/dev
-    repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-deploy.git
+    path: dev_cluster/07-org-units
+    repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
     targetRevision: HEAD
     directory:
       recurse: true

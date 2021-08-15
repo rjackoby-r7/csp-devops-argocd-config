@@ -4,6 +4,7 @@ metadata:
   name: 04-clusters-dev
   namespace: argocd
   labels:
+    domain: config
     level: tier-root
     tier: clusters
 spec:

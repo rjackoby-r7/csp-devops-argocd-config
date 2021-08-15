@@ -1,15 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: 02-cluster-bootstrap-dev
+  name: 01-argocd-dev
   namespace: argocd
   labels:
+    domain: config
     level: tier-root
-    tier: cluster
+    tier: argocd
 spec:
   project: default
   source:
-    path: dev_cluster/02-cluster-bootstrap
+    path: dev_cluster/01-argocd-infra-helm
     repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
     targetRevision: HEAD
 

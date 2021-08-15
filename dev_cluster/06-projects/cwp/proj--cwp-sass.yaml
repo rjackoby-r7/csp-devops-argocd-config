@@ -4,7 +4,7 @@ metadata:
   name: cwp-sass-dev-proj
   namespace: argocd #Must be in 'argocd' ns in order to be appeared in UI
   labels:
-    level: component
+    domain: config
     tier: projects
 
 spec:

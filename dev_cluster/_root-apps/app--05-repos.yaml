@@ -4,6 +4,7 @@ metadata:
   name: 05-repos-dev
   namespace: argocd
   labels:
+    domain: config
     level: tier-root
     tier: repos
 spec:

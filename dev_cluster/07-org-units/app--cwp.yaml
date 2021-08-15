@@ -4,7 +4,8 @@ metadata:
   name: 07-deployments-dev
   namespace: argocd
   labels:
-    level: tier-root
+    domain: config
+    level: org-unit
     tier: deployments
 spec:
   project: default

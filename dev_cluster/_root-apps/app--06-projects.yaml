@@ -4,6 +4,7 @@ metadata:
   name: 06-projects-dev
   namespace: argocd
   labels:
+    domain: config
     level: tier-root
     tier: projects
 spec:

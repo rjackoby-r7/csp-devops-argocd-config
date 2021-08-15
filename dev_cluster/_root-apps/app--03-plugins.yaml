@@ -4,6 +4,7 @@ metadata:
   name: 03-plugins-dev
   namespace: argocd
   labels:
+    domain: config
     level: tier-root
     tier: plugins
 spec:
