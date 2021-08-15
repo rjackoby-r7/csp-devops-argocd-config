@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: 07-deployments-dev
+  namespace: argocd
+  labels:
+    level: tier-root
+    tier: deployments
+spec:
+  project: default
+  source:
+    path: cwp/dev/_deployment-units
+    repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-deploy.git
+    targetRevision: HEAD
+    directory:
+      recurse: true
+
+  destination:
+    namespace: '*'
+    server: https://kubernetes.default.svc
