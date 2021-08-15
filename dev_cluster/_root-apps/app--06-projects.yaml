@@ -13,6 +13,8 @@ spec:
     path: dev_cluster/06-projects
     repoURL: https://github.com/rjackoby-r7/csp-devops-argocd-config.git
     targetRevision: HEAD
+    directory:
+      recurse: true
 
   destination:
     namespace: '*'
