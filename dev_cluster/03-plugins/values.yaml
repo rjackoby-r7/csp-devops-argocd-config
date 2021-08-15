@@ -13,3 +13,13 @@ applicationset:
   destination:
     namespace: argocd
     server:    https://kubernetes.default.svc
+
+crossplane:
+  source:
+    repoURL: http://alcide-argo-test.s3-website-us-east-1.amazonaws.com/new-structure/cluster-level-charts/
+    chart: crossplane
+    targetRevision: 1.3.0
+
+  destination:
+    namespace: argocd
+    server:    https://kubernetes.default.svc
