@@ -11,6 +11,12 @@ spec:
   destinations:
   - namespace: '*'
     server: https://kubernetes.default.svc
+  - namespace: '*'
+    server: https://3EB3DC8AF129F3A4543FE2EF568D1494.yl4.eu-west-1.eks.amazonaws.com
+  - namespace: '*'
+    server: https://3969BC3980538D1D0367E610E43745D6.sk1.eu-west-1.eks.amazonaws.com
+  - namespace: '*'
+    server: https://55341330D7642D10A93C906543B43C7B.gr7.eu-west-1.eks.amazonaws.com
   orphanedResources:
     warn: false
   sourceRepos:
