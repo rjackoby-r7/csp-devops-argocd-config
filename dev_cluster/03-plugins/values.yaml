@@ -23,3 +23,5 @@ crossplane:
   destination:
     namespace: crossplane-system
     server:    https://kubernetes.default.svc
+
+  provider_config_name: divvy-dev

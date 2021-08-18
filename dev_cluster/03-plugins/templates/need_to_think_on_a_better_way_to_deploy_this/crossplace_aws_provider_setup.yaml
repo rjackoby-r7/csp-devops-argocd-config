@@ -1,0 +1,20 @@
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: provider-aws
+spec:
+  package: "crossplane/provider-aws:v0.19.0"
+
+---
+
+apiVersion: aws.crossplane.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: {{ .Values.crossplane.provider_config_name }}-aws-provider-config
+spec:
+  credentials:
+    source: Secret
+    secretRef:
+      namespace: crossplane-system # Need to be created once per cloud account
+      name: aws-creds
+      key: key
