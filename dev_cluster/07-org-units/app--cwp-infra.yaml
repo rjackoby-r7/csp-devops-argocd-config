@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cwp-org-unit-dev
+  name: cwp-org-unit-infra-dev
   namespace: argocd
   labels:
     domain: config
