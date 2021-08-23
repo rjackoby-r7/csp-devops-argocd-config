@@ -16,6 +16,10 @@ spec:
     directory:
       recurse: true
 
+  syncPolicy:
+    automated:
+      allowEmpty: true
+
   destination:
     namespace: '*'
     server: https://kubernetes.default.svc
