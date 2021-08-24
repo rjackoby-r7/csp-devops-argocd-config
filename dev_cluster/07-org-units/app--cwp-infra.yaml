@@ -16,9 +16,9 @@ spec:
     directory:
       recurse: true
 
-  syncPolicy:
-    automated:
-      allowEmpty: true
+  #syncPolicy:
+  #  automated:
+  #    allowEmpty: true
 
   destination:
     namespace: '*'
