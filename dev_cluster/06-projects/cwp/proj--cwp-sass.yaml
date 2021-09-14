@@ -20,6 +20,9 @@ spec:
     server: https://3969BC3980538D1D0367E610E43745D6.sk1.eu-west-1.eks.amazonaws.com
   - namespace: '*'
     server: https://55341330D7642D10A93C906543B43C7B.gr7.eu-west-1.eks.amazonaws.com
+  - namespace: '*'
+    server: https://4161D3BDBFF9EE939A28610DB8C62C0E.gr7.eu-west-1.eks.amazonaws.com
+
 
   orphanedResources:
     warn: false
